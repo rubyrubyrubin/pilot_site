@@ -86,7 +86,7 @@ img {
   position: relative;
   width: 60px;
   height: 60px;
-  background: url(knap.png);
+  background: url(burger.svg);
   background-repeat: no-repeat;
   background-size: 46px;
   background-position: center;
@@ -94,7 +94,7 @@ img {
 }
 
 .toggle.active {
-  background: url(lykkeknap.png);
+  background: url(lowburger.svg);
   background-repeat: no-repeat;
   background-size: 25px;
   background-position: center;
