@@ -35,12 +35,26 @@ article {
 }
 
 .content > p {
-  color: #72f1b8;
+  color: black;
 }
 
-p + figure {
+figure h1 {
   /*ved siden af*/
   margin-top: 1rem;
+  place-self: end center;
+}
+
+figure figcaption {
+  /* display: grid;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; */
+  /* max-width: 500px; */
+  place-self: end center;
+}
+
+figure > * {
+  grid-area: 1/1;
 }
 
 /* ========== gallery ========== */
@@ -74,4 +88,12 @@ h2 {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 10px;
+}
+
+header p {
+  grid-row: 1;
+  align-self: self-end;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
 }
