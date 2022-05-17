@@ -1,10 +1,49 @@
-@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-
+body {
+  margin: 0;
+}
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "babas+Neue", sans-serif;
+}
+
+.image-grid {
+  --gap: 16px;
+  --num-cols: 4;
+  --row-height: 300px;
+
+  box-sizing: border-box;
+  padding: var(--gap);
+
+  display: grid;
+  grid-template-columns: repeat(var(--num-cols), 1fr);
+  grid-auto-rows: var(--row-height);
+  gap: var(--gap);
+  transition: 1s;
+}
+
+img {
+  filter: grayscale(100%);
+}
+
+.image-grid:hover {
+  background-color: rgba(0, 255, 255, 0.377);
+  transition: 1s;
+}
+
+.image-grid > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-grid-col-2 {
+  grid-column: span 2;
+}
+
+.image-row-col-2 {
+  grid-row: span 2;
 }
 
 .showcase {
@@ -63,68 +102,6 @@
   background-size: 48px;
 }
 
-.showcase video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  opacity: 0.8;
-}
-
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #022f4460;
-}
-
-.text {
-  position: relative;
-  z-index: 10;
-}
-
-.text h2 {
-  font-size: 5em;
-  font-weight: 800;
-  line-height: 1em;
-  text-transform: uppercase;
-}
-
-.text h3 {
-  font-size: 4em;
-  font-weight: 700;
-  line-height: 1em;
-  text-transform: uppercase;
-}
-
-.text p {
-  font-size: 1.1em;
-  margin: 20px 0;
-  font-weight: 400;
-  max-width: 700px;
-}
-
-.text a {
-  display: inline-block;
-  font-size: 1em;
-  background: white;
-  padding: 10px 30px;
-  text-decoration: none;
-  color: #111;
-  margin-top: 10px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  transition: 0.2s;
-}
-
-.text a:hover {
-  letter-spacing: 6px;
-}
-
 .menu {
   position: absolute;
   top: 0;
@@ -151,16 +128,9 @@
   color: aqua;
 }
 
-@media (max-width: 798px) {
-  .showcase,
-  .showcase header {
-    padding: 40px;
-  }
-
-  .text h2 {
-    font-size: 3em;
-  }
-  .text h2 {
-    font-size: 2em;
+@media screen and (max-width: 1024px) {
+  .image-grid {
+    --num-cols: 2;
+    --row-height: 200px;
   }
 }
